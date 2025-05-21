@@ -79,7 +79,7 @@ def calculate_required_battery_count(load_kw, battery_type, selected_time, targe
 
 
 # Streamlit oldal beállítása
-st.set_page_config(page_title="UPS Akkumulátor Méretező", layout="centered")  # Oldal címe és elrendezése
+st.set_page_config(page_title="UPS Akkumlátor Méretező", layout="centered")  # Oldal címe és elrendezése
 st.title("🔋 UPS Akkumulátor Méretező")  # Főcím
 
         
