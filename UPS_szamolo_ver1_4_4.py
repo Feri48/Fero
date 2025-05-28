@@ -128,11 +128,11 @@ st.markdown(
     """
     <div style="position:fixed; left:0; bottom:0; width:100%; background: #f8e71c; color:#222; text-align:center; padding:8px 0; z-index:1000;">
     <marquee behavior="scroll" direction="left" scrollamount="6">
-        🔋 UPS méretező | Készítette: Ferosoft | 2025 V1.4.4| Minden jog fenntartva 💡
+        🔋 UPS méretező | Készítette: Ferosoft | 2025 V0.9.4| Minden jog fenntartva 💡
     </marquee>
     </div>
     """,
     unsafe_allow_html=True
 )
-#  3 colum verz. müködőképes verzió: 1.4.4
+#  3 colum verz. müködőképes verzió: 1.4.4 file
 # 2025.05.27
