@@ -1,2 +1,2 @@
 # Fero
-UPS
+UPS Battery Calculator
