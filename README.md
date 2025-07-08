@@ -1,2 +1,2 @@
 # Fero
-UPS Battery Calculator
+UPS Battery Backup Time Calculator with Streamlit 
