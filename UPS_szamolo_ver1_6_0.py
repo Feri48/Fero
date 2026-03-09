@@ -379,7 +379,7 @@ st.markdown(
     """
     <div style="position:fixed; left:0; bottom:0; width:100%; background: #f8e71c; color:#222; text-align:center; padding:8px 0; z-index:1000;">
     <marquee behavior="scroll" direction="left" scrollamount="6">
-        🔋 UPS méretező | Készítette: Ferosoft ™®| ©2025 V1.6.0 - Grafikus elemzések 📊💾 | Minden jog fenntartva !💡
+        🔋 UPS méretező | Készítette: Ferosoft ™®| ©2026 V1.6.0 - Grafikus elemzések 📊💾 | Minden jog fenntartva !💡
     </marquee>
     </div>
     """,
