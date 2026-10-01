@@ -250,8 +250,8 @@ st.title("🔋 UPS Akkumlátor Méretező")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    ups_power_kva = st.number_input("UPS névleges [kVA]", min_value=3.0, max_value=300.0, value=10.0, step=1.0,
-                                    help="Látszólagos teljesítmény kVA-ban (3-300kVA).")
+    ups_power_kva = st.number_input("UPS névleges [kVA]", min_value=3.0, max_value=500.0, value=10.0, step=1.0,
+                                    help="Látszólagos teljesítmény kVA-ban (3-500kVA).")
     backup_time_min = st.number_input("Áthidalási idő [perc]", min_value=5, max_value=180, value=10,
                                       help="Elvárt áthidalási idő 5-180(Sunstone) perc.")
     st.subheader("📊 Eredmények:")
@@ -278,19 +278,19 @@ with col3:
         backup_time_min = 60
 
 with col2:
-    load_kw = st.number_input("Terhelés [kW]", min_value=2.0, max_value=300.0, value=9.0, step=1.0,
-                              help="A valós terhelés kW-ban (2-300kW).")
+    load_kw = st.number_input("Terhelés [kW]", min_value=2.0, max_value=500.0, value=9.0, step=1.0,
+                              help="A valós terhelés kW-ban (2-500kW).")
     power_factor = st.number_input("Teljesítménytényező (PF)", min_value=0.89, max_value=1.00, value=1.00, step=0.01,
                                    help="Teljesítménytényező (AC) 0,90-1,00 között.")
 
 with col4:
-    stringcount = st.selectbox("Stringek", [1, 2, 3, 4, 5, 6, 7, 8], index=0, help="A stringek száma 1-8 között.")
+    stringcount = st.selectbox("Stringek", [1, 2, 3, 4, 5, 6, 7, 8, 9], index=0, help="A stringek száma 1-9 között.")
 
-    battery_count = st.slider("Akkumlátorok száma", min_value=6, max_value=44, value=40,
-                              help="Akkuk száma 6-44 között.")
+    battery_count = st.slider("Akkumlátorok száma", min_value=6, max_value=44, value=40, step=2,
+                              help="Akkuk száma 6-44 között(párosával).")
     # if  power_factor >= 0.95 and
     if battery_count <= 36:
-        st.toast("Figyelem: 36db akkunál (SOCOMEC)! / csökkenhet a DC hatásfok! <95%.",
+        st.toast("Figyelem: 36db alatt (SOCOMEC)! / csökkenhet a DC hatásfok! <95%.",
                  icon="⚠️")  # st.error("⚠️ A hatásfok az akkuk  száma miatt 95%!")
 
 if load_kw > ups_power_kva * power_factor:
@@ -379,14 +379,14 @@ st.markdown(
     """
     <div style="position:fixed; left:0; bottom:0; width:100%; background: #f8e71c; color:#222; text-align:center; padding:8px 0; z-index:1000;">
     <marquee behavior="scroll" direction="left" scrollamount="6">
-        🔋 UPS méretező | Készítette: Ferosoft ™®| ©2026 V1.6.0 - Grafikus elemzések 📊💾 | Minden jog fenntartva !💡
+        🔋 UPS méretező | Készítette: Ferosoft ™®| ©2025 V1.6.0 - Grafikus elemzések 📊💾 | Minden jog fenntartva !💡
     </marquee>
     </div>
     """,
     unsafe_allow_html=True
 )
 
-# 2025.02.08  Ferosoft™® UPS méretező V1.6.0 - Teljes funkciókészlet
+# 2026.02.08  Ferosoft™® UPS méretező V1.6.0 - Teljes funkciókészlet  CHART
 # Új funkciók:
 # - Teljesítmény görbe az idő függvényében (Plotly)
 # - Áthidalási idő vs. akkumulátor darabszám grafikon
@@ -395,5 +395,5 @@ st.markdown(
 # - String feszültség megjelenítés
 # - 180 perces áthidalási idő támogatás (Sunstone)
 # - 1-8 string támogatás
-# Futtatás: python -m streamlit run UPS_szamolo_ver1_6_0_chart.py
+# Futtatás: python -m streamlit run UPS_szamolo_ver1_6_0.py
 # Web: http://<szerver_neve>:8501
